@@ -1,0 +1,13 @@
+# ==============================================
+# MTK Policy Rule
+# ============
+
+
+allow dnsmasq netd:file read;
+
+# ==============================================
+# MTK Policy Rule
+# ============
+
+
+allow dnsmasq lannetmngrd:file read;
