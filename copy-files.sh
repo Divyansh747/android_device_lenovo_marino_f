@@ -7,7 +7,7 @@ exit
 fi
 
 VENDOR=lenovo
-DEVICE=A7010a48
+DEVICE=marino_f
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 
