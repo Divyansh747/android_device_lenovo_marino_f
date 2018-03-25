@@ -191,7 +191,9 @@ type debugfs_binder, fs_type, debugfs_type;
 type debugfs_blockio, fs_type, debugfs_type;
 
 # fuseio debugfs file
+type debugfs_fuseio, fs_type, debugfs_type;
 
+# usb debugfs file
 type debugfs_usb, fs_type, debugfs_type;
 
 # display debugfs file

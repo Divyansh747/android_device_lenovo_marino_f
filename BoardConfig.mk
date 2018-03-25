@@ -23,6 +23,9 @@ include $(LOCAL_PATH)/board/*.mk
 # Device vendor board
 -include vendor/lenovo/marino_f/BoardConfigVendor.mk
 
+# Include headers path
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/kernel-headers
+
 #######################################################################
 
 # Kernel
