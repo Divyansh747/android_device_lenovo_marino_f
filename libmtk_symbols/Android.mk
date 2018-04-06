@@ -2,14 +2,17 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
+    icu53.c \
     icu55.c \
     mtk_asc.cpp \
     mtk_audio.cpp \
     mtk_audioCompat.c \
     mtk_cam.cpp \
-	mtk_gps.cpp \
+    mtk_fence.cpp \
+    mtk_gps.cpp \
     mtk_omx.cpp \
     mtk_ui.cpp \
+    mtk_wvm.cpp \
     mtk_xlog.cpp
 
 # only for 64bit libraries

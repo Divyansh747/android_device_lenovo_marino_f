@@ -16,22 +16,24 @@
 
 # Device path
 LOCAL_PATH := device/lenovo/marino_f
+MTK_PROJECT_CONFIG ?= $(LOCAL_PATH)/ProjectConfig.mk
 
 # Device board elements
+include $(LOCAL_PATH)/PlatformConfig.mk
 include $(LOCAL_PATH)/board/*.mk
-
-# Device vendor board
--include vendor/lenovo/marino_f/BoardConfigVendor.mk
 
 # Include headers path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/kernel-headers
+
+# Device vendor board
+-include vendor/lenovo/marino_f/BoardConfigVendor.mk
 
 #######################################################################
 
 # Kernel
 TARGET_KMODULES := true
 BOARD_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
-
+androidboot.selinux=permissive
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
@@ -46,9 +48,11 @@ BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-# System.prop
+# init
+TARGET_PROVIDES_INIT_RC := true
+
+# system.prop
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
-# Block based ota
-# see http://review.cyanogenmod.org/#/c/78849/1/core/Makefile
-BLOCK_BASED_OTA := false
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/11270000.usb3/musb-hdrc/gadget/lun%d/file

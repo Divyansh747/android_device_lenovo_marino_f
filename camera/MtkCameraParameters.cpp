@@ -291,3 +291,4 @@ const char MtkCameraParameters::KEY_DXOEIS_ONOFF[] = "dxo-eis";
 const char MtkCameraParameters::KEY_FIX_EXPOSURE_TIME[] = "fix-exposure-time";
 
 }; // namespace android
+

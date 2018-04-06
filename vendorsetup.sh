@@ -21,5 +21,8 @@
 # function: add_lunch_combo generic-eng
 
 for var in eng user userdebug; do
-  add_lunch_combo los_marino_f-$var
+  add_lunch_combo lineage_marino_f-$var
 done
+
+#Ship with root access
+export WITH_SU=true

@@ -12,7 +12,4 @@ TARGET_IS_64_BIT := true
 MTK_K64_SUPPORT := yes
 
 # Kernel properties
-TARGET_KERNEL_SOURCE := kernel/lenovo/marino_f
-TARGET_KERNEL_CONFIG := marino_defconfig
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-MTK_APPENDED_DTB_SUPPORT := yes
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel
