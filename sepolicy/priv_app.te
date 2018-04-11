@@ -1,25 +1,11 @@
-# ==============================================
-# MTK Policy Rule
-# ==============================================
+# Guiext
+allow priv_app guiext-server_service:service_manager find;
 
-# Date: 2015/9/23
-# Operation: Program binary service
-# Purpose : Add permission for program binary service find from ServiceManager.
-allow priv_app program_binary_service:service_manager find;
+# PQ
+allow priv_app pq_service:service_manager find;
 
-# Date: 2016/7/1
-# Operation: SQC
-# Purpose: Add permission to access files on SD card when sdcrdfs is enabled.
-allow priv_app sdcard_type:dir create_dir_perms;
-allow priv_app sdcard_type:file create_file_perms;
+# dev_info
+allow priv_app sysfs_devinfo:file r_file_perms;
 
-# Date: 2016/07/11
-# Operation : Migration
-# Purpose : Add permission for gpu access
-allow priv_app dri_device:chr_file write;
-
-
-# Date : WK16.43
-# Operation : Migration
-# Purpose : allow priv_app to find pq_service
-allow priv_app pq_service:service_manager { find };
+# thermal
+allow priv_app sysfs_thermal:file r_file_perms;
