@@ -1,5 +1,5 @@
 LOCAL_PATH:= $(call my-dir)
-ifneq ($(filter x603,$(TARGET_DEVICE)),)
+ifneq ($(filter marino_f,$(TARGET_DEVICE)),)
 include $(CLEAR_VARS)
 
 # Device init files
