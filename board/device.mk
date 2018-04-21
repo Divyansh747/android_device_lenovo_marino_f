@@ -8,4 +8,7 @@ USE_MINIKIN := true
 
 # Configure jemalloc for low memory
 MALLOC_SVELTE := true
+
+# Deodex
+WITH_DEXPREOPT := false
  
