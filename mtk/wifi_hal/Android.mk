@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The Android Open Source Project
+# Copyright (C) 2011 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,15 +18,7 @@ LOCAL_PATH := $(call my-dir)
 # ============================================================
 include $(CLEAR_VARS)
 
-LOCAL_REQUIRED_MODULES :=
-
-LOCAL_CFLAGS += -Wno-unused-parameter -Wno-int-to-pointer-cast
-LOCAL_CFLAGS += -Wno-maybe-uninitialized -Wno-parentheses
-LOCAL_CPPFLAGS += -Wno-conversion-null
-
-ifeq ($(MTK_TC7_FEATURE), yes)
-LOCAL_CFLAGS += -DCONFIG_PNO_SUPPORT
-endif
+LOCAL_CFLAGS := -Wno-unused-parameter
 
 LOCAL_C_INCLUDES += \
 	external/libnl/include \
@@ -40,9 +32,10 @@ LOCAL_SRC_FILES := \
 	cpp_bindings.cpp \
 	gscan.cpp \
 	link_layer_stats.cpp \
+	wifi_logger.cpp \
 	wifi_offload.cpp
 
-LOCAL_MODULE := libwifi-hal-mt66xx
+LOCAL_MODULE := libwifi-hal-bcm
 
 include $(BUILD_STATIC_LIBRARY)
 

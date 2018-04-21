@@ -39,3 +39,11 @@ LOCAL_MODULE := libshim_xlog
 LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
+
+# gps symbols
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := agps/icu53.c agps/ssl.c
+LOCAL_SHARED_LIBRARIES := libicuuc libssl
+LOCAL_MODULE := libmtkshim_gps
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
