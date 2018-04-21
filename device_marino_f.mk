@@ -21,8 +21,15 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Device specific overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+
 # Device product elements
 include $(LOCAL_PATH)/product/*.mk
+
+# extra log controls prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.ril.log=0 \
+	ro.disable.xlog=0
 
 # Dalvik heap configurations
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-4096-dalvik-heap.mk)
